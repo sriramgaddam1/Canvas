@@ -453,21 +453,28 @@ export default function DrawingApp() {
               transition={{ type: "spring", damping: 25 }}
             >
               <div className="p-4 space-y-4">
-                <button 
-                  onClick={() => setColorPanelOpen(!colorPanelOpen) || setIsMobileMenuOpen(false)}
-                  className={`flex items-center space-x-4 w-full px-3 py-3 rounded-lg ${colorPanelOpen ? 'bg-blue-100 text-blue-600' : ''} ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
-                >
-                  <Droplet size={20} />
-                  <span>Colors</span>
-                </button>
-                
-                <button 
-                  onClick={() => setLayersPanelOpen(!layersPanelOpen) || setIsMobileMenuOpen(false)}
-                  className={`flex items-center space-x-4 w-full px-3 py-3 rounded-lg ${layersPanelOpen ? 'bg-blue-100 text-blue-600' : ''} ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
-                >
-                  <Layers size={20} />
-                  <span>Layers</span>
-                </button>
+               <button 
+  onClick={() => {
+    setColorPanelOpen(!colorPanelOpen);
+    setIsMobileMenuOpen(false);
+  }}
+  className={`flex items-center space-x-4 w-full px-3 py-3 rounded-lg ${colorPanelOpen ? 'bg-blue-100 text-blue-600' : ''} ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+>
+  <Droplet size={20} />
+  <span>Colors</span>
+</button>
+
+<button 
+  onClick={() => {
+    setLayersPanelOpen(!layersPanelOpen);
+    setIsMobileMenuOpen(false);
+  }}
+  className={`flex items-center space-x-4 w-full px-3 py-3 rounded-lg ${layersPanelOpen ? 'bg-blue-100 text-blue-600' : ''} ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+>
+  <Layers size={20} />
+  <span>Layers</span>
+</button>
+
                 
                 <button 
                   onClick={() => {downloadImage(); setIsMobileMenuOpen(false);}}
